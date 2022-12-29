@@ -25,3 +25,35 @@ Here's a breakdown of each component:
 - `\.`: This period is used to separate the domain part from the top-level domain (e.g., com, edu, gov).
 - `([a-z\.]{2,6})`: This group matches the top-level domain of the email address, which is the part after the period. The group consists of two to six lowercase letters or periods.
 - `$`: This anchor specifies that the regex should match the end of the string.
+
+## Validating Email Addresses with JavaScript
+To validate email addresses using JavaScript, we can create a regular expression object from the regex string and use the test() method to check if a string matches the regex:
+​
+```json
+let regex = /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
+​
+console.log(regex.test("john.doe@example.com")); // true
+console.log(regex.test("jane.doe@example.co.uk")); // true
+console.log(regex.test("john.doe@example")); // false
+console.log(regex.test("john.doe@.com")); // false
+```
+​
+The first two examples will output true because the email addresses are valid. The third and fourth examples will output false because the email addresses are not valid.
+​
+In the third example, the domain part of the email address (example) is missing a top-level domain (e.g., com, edu, gov).
+​
+In the fourth example, the top-level domain (.com) is missing a domain part (e.g., example, gmail, yahoo).
+​
+## Conclusion
+In this tutorial, we learned how to use a regular expression to match and validate email addresses. We broke down the regular expression into its different components and explained what each part does. We also demonstrated how to use the regular expression in JavaScript to validate an email address.
+​
+Regular expressions are a powerful tool for manipulating and searching text, and are widely used in programming languages and tools. If you want to learn more about regular expressions, here are some resources for further reading:
+​
+- [Regular-Expressions.info](https://www.regular-expressions.info/)
+- [MDN Web Docs: Regular Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
+​
+I hope this tutorial was helpful and that you now have a better understanding of how to use regular expressions to match and validate email addresses.
+​
+## Author
+Teresa Hartsfield hartsfieldt@gmail.com (919)450-5146.
+You can find more of my projects on my [GitHub Profile](https://github.com/hartsfieldt).
